@@ -520,6 +520,131 @@
         justify-content: flex-start;
       }
     }
+    .project-open {
+    cursor: pointer;
+    }
+
+    .project-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 24px;
+    }
+
+    .project-modal.active {
+    display: flex;
+    }
+
+    .project-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(6px);
+    }
+
+    .project-modal-content {
+    position: relative;
+    width: min(900px, 95vw);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #f7f7f7;
+    color: #111;
+    border-radius: 24px;
+    padding: 26px 26px 30px;
+    z-index: 2;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+    }
+
+    .project-modal-content h2 {
+    text-align: center;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    margin-bottom: 18px;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    }
+
+    .project-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    border: none;
+    background: transparent;
+    font-size: 2.4rem;
+    line-height: 1;
+    color: #888;
+    cursor: pointer;
+    }
+
+    .project-modal-close:hover {
+    color: #111;
+    }
+
+    .project-slider {
+    position: relative;
+    margin: 0 auto 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .project-slider img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: white;
+    }
+
+    .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.95);
+    color: #222;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    }
+
+    .slider-btn.prev {
+    left: 14px;
+    }
+
+    .slider-btn.next {
+    right: 14px;
+    }
+
+    #modalDescription {
+    font-size: 1.08rem;
+    line-height: 1.9;
+    color: #222;
+    white-space: pre-line;
+    }
+
+    @media (max-width: 700px) {
+    .project-modal-content {
+        padding: 20px 18px 24px;
+        border-radius: 18px;
+    }
+
+    .slider-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 1.6rem;
+    }
+
+    .project-slider img {
+        max-height: 280px;
+    }
+    }
   </style>
 </head>
 <body>
@@ -527,7 +652,7 @@
 
   <header class="topbar">
     <div class="topbar-inner">
-      <div class="brand"><span>YASSINE</span> / PORTFOLIO</div>
+      <div class="brand"><span>YASSINE JOUINI</span> / PORTFOLIO</div>
       <nav class="nav">
         <a href="#home">Accueil</a>
         <a href="#projects">Projets</a>
@@ -545,7 +670,14 @@
           en projets clairs, visuels et utiles.
         </h1>
         <p>
+
+        </p>
+        <p>
           Étudiant orienté Data, Business Intelligence et pilotage, je construis des projets qui relient analyse, prise de décision et présentation claire des résultats. Ici, tu peux découvrir mon travail, mes expériences et mes réalisations.
+        </p>
+
+        <p>
+            Actuellement à la recherche d'une alternance en Data Analysis ou Business Intelligence pour la rentrée 2027, je suis ouvert à toute opportunité qui me permettra de mettre en pratique mes compétences et de contribuer à des projets data concrets.
         </p>
 
         <div class="hero-actions">
@@ -572,105 +704,140 @@
 
     <section class="container" id="projects">
       <div class="section-heading fade-up">
-        <span class="tag">au centre de la page</span>
+        
         <h2>Projets & expériences</h2>
         <p>
-          J’ai laissé ici 6 cartes élégantes que tu peux remplir avec tes projets data, dashboards, expériences, stages, missions ou réalisations académiques.
+
         </p>
       </div>
 
       <div class="projects-grid">
-        <article class="project-card fade-up">
-          <div>
+        <article class="project-card fade-up project-open"
+                data-title="STAGE - Data & Business Intelligence"
+                data-description="🎯 Objectif : Découvrir et appliquer les outils de Business Intelligence pour analyser des données et construire des dashboards utiles à la prise de décision.\n\n📊 Contexte : Stage chez Poulina Group Holding (Tunisie), avec des données internes utilisées pour le reporting et le suivi de performance.\n\n🛠 Compétences développées :\n- Création de dashboards interactifs (Power BI)\n- Structuration d’indicateurs de performance\n- Participation au reporting opérationnel\n- Transformation de données Excel en insights exploitables\n\n💻 Technologies utilisées : Excel, Power BI"
+                data-images="images/actualite-2.png,images/attestation.jpg,images/poulina-in.jpg">
+            <div>
             <div class="project-top">
-              <span class="project-badge">Projet 01</span>
-              <span class="project-index">01</span>
+                <span class="project-badge">STAGE</span>
+                <span class="project-index"></span>
             </div>
-            <h3>Nom de ton projet</h3>
-            <p>Ajoute ici une courte description : objectif, outil utilisé, résultat principal, ou insight business marquant.</p>
-          </div>
-          <div class="project-footer">
+            <h3>Stagiaire Data & Business Intelligence</h3>
+            <p>Création de dashboards et participation au reporting pour faciliter le suivi des indicateurs et la prise de décision.</p>
+            </div>
+            <div class="project-footer">
+            <small>Excel • Power BI</small>
+            <span class="arrow">↗</span>
+            </div>
+        </article>
+
+        <article class="project-card fade-up project-open"
+                data-title="Projet 02"
+                data-description="🎯 Objectif : Contribuer à une librairie de routage pour réseaux à délais (DTN) en améliorant la fiabilité des algorithmes.\n\n📡 Contexte : Projet au LIRMM sur A-SABR, une librairie Rust utilisée pour le routage dans des réseaux spatiaux avec des fenêtres de communication planifiées.\n\n🛠 Compétences développées :\n- Implémentation de tests unitaires et d’intégration\n- Validation du comportement des algorithmes de routage\n- Travail sur des graphes temporels et systèmes distribués\n- Amélioration de la robustesse et qualité du code\n\n💻 Technologies utilisées : Rust, GitHub, tests automatisés"
+                data-images="images/projet2-1.png,images/projet2-2.png">
+            <div>
+            <div class="project-top">
+                <span class="project-badge">PFE</span>
+                <span class="project-index"></span>
+            </div>
+            <h3>Contribution en Schedule-Aware Bundle Routing</h3>
+            <p>Contribution à une librairie de routage pour réseaux spatiaux en développant des tests et en améliorant la fiabilité du système.</p>
+            </div>
+            <div class="project-footer">
+            <small>Rust</small>
+            <span class="arrow">↗</span>
+            </div>
+        </article>
+
+        <article class="project-card fade-up project-open"
+                data-title="Projet 03"
+                data-description="Description détaillée du projet 3."
+                data-images="images/projet3-1.png,images/projet3-2.png">
+            <div>
+            <div class="project-top">
+                <span class="project-badge">PROJET PERSO</span>
+                <span class="project-index"></span>
+            </div>
+            <h3>Analyse du churn client bancaire</h3>
+            <p>Analyse du churn client bancaire et identification des profils à risque à l’aide de Python et Power BI.</p>
+            </div>
+            <div class="project-footer">
             <small>Python • Power BI</small>
             <span class="arrow">↗</span>
-          </div>
-        </article>
-
-        <article class="project-card fade-up">
-          <div>
-            <div class="project-top">
-              <span class="project-badge">Projet 02</span>
-              <span class="project-index">02</span>
             </div>
-            <h3>Nom de ton expérience</h3>
-            <p>Tu peux mettre ici un stage, une alternance, une expérience associative ou une mission liée à la donnée et au pilotage.</p>
-          </div>
-          <div class="project-footer">
-            <small>SQL • Dashboard</small>
-            <span class="arrow">↗</span>
-          </div>
         </article>
 
-        <article class="project-card fade-up">
-          <div>
+        <article class="project-card fade-up project-open"
+                data-title="Projet 04"
+                data-description="Description détaillée du projet 4."
+                data-images="images/projet4-1.png,images/projet4-2.png">
+            <div>
             <div class="project-top">
-              <span class="project-badge">Projet 03</span>
-              <span class="project-index">03</span>
-            </div>
-            <h3>Nom de ton projet</h3>
-            <p>Cette carte peut accueillir un projet data, une étude de cas business, une analyse exploratoire ou une visualisation.</p>
-          </div>
-          <div class="project-footer">
-            <small>Data Viz • BI</small>
-            <span class="arrow">↗</span>
-          </div>
-        </article>
-
-        <article class="project-card fade-up">
-          <div>
-            <div class="project-top">
-              <span class="project-badge">Projet 04</span>
-              <span class="project-index">04</span>
+                <span class="project-badge">Projet 04</span>
+                <span class="project-index">04</span>
             </div>
             <h3>Nom de ton projet</h3>
             <p>Tu peux aussi y présenter un projet universitaire, une contribution technique ou une mission orientée décision.</p>
-          </div>
-          <div class="project-footer">
+            </div>
+            <div class="project-footer">
             <small>Rust • Analyse</small>
             <span class="arrow">↗</span>
-          </div>
+            </div>
         </article>
 
-        <article class="project-card fade-up">
-          <div>
+        <article class="project-card fade-up project-open"
+                data-title="Projet 05"
+                data-description="Description détaillée du projet 5."
+                data-images="images/projet5-1.png,images/projet5-2.png">
+            <div>
             <div class="project-top">
-              <span class="project-badge">Projet 05</span>
-              <span class="project-index">05</span>
+                <span class="project-badge">Projet 05</span>
+                <span class="project-index">05</span>
             </div>
             <h3>Nom de ton projet</h3>
             <p>Mets ici un projet personnel fort, avec une phrase claire sur la valeur créée ou le problème résolu.</p>
-          </div>
-          <div class="project-footer">
+            </div>
+            <div class="project-footer">
             <small>Business • KPI</small>
             <span class="arrow">↗</span>
-          </div>
+            </div>
         </article>
 
-        <article class="project-card fade-up">
-          <div>
+        <article class="project-card fade-up project-open"
+                data-title="Projet 06"
+                data-description="Description détaillée du projet 6."
+                data-images="images/projet6-1.png,images/projet6-2.png">
+            <div>
             <div class="project-top">
-              <span class="project-badge">Projet 06</span>
-              <span class="project-index">06</span>
+                <span class="project-badge">Projet 06</span>
+                <span class="project-index">06</span>
             </div>
             <h3>Nom de ton projet</h3>
             <p>Dernier espace libre pour montrer un dashboard, une analyse de churn, une segmentation ou une autre réalisation.</p>
-          </div>
-          <div class="project-footer">
+            </div>
+            <div class="project-footer">
             <small>Insights • Décision</small>
             <span class="arrow">↗</span>
-          </div>
+            </div>
         </article>
-      </div>
-    </section>
+        </div>
+
+        <div class="project-modal" id="projectModal">
+        <div class="project-modal-overlay" id="projectModalOverlay"></div>
+
+        <div class="project-modal-content">
+            <button class="project-modal-close" id="projectModalClose" aria-label="Fermer">×</button>
+
+            <h2 id="modalTitle">Titre du projet</h2>
+
+            <div class="project-slider">
+            <button class="slider-btn prev" id="prevSlide" aria-label="Image précédente">‹</button>
+            <img id="modalImage" src="" alt="Aperçu du projet">
+            <button class="slider-btn next" id="nextSlide" aria-label="Image suivante">›</button>
+            </div>
+
+            <p id="modalDescription"></p>
+        </div>
+        </div>
 
     <section class="container" id="contact">
       <div class="contact-wrap fade-up">
@@ -708,14 +875,93 @@
 
   <script>
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+        entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+            entry.target.classList.add('visible');
         }
-      });
+        });
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
-  </script>
+
+    const modal = document.getElementById('projectModal');
+    const modalOverlay = document.getElementById('projectModalOverlay');
+    const modalClose = document.getElementById('projectModalClose');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalImage = document.getElementById('modalImage');
+    const prevSlide = document.getElementById('prevSlide');
+    const nextSlide = document.getElementById('nextSlide');
+    const projectCards = document.querySelectorAll('.project-open');
+
+    let currentImages = [];
+    let currentIndex = 0;
+
+    function updateSlide() {
+        if (!currentImages.length) return;
+        modalImage.src = currentImages[currentIndex];
+    }
+
+    function openModal(card) {
+        const title = card.dataset.title || 'Projet';
+        const description = (card.dataset.description || '').replace(/\\n/g, '\n');
+        const images = (card.dataset.images || '')
+        .split(',')
+        .map(item => item.trim())
+        .filter(Boolean);
+
+        modalTitle.textContent = title;
+        modalDescription.innerText = description;
+        currentImages = images;
+        currentIndex = 0;
+
+        if (currentImages.length) {
+        updateSlide();
+        } else {
+        modalImage.src = '';
+        }
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    projectCards.forEach(card => {
+        card.addEventListener('click', () => openModal(card));
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', closeModal);
+
+    prevSlide.addEventListener('click', () => {
+        if (!currentImages.length) return;
+        currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+        updateSlide();
+    });
+
+    nextSlide.addEventListener('click', () => {
+        if (!currentImages.length) return;
+        currentIndex = (currentIndex + 1) % currentImages.length;
+        updateSlide();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('active')) return;
+
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft' && currentImages.length) {
+        currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+        updateSlide();
+        }
+        if (e.key === 'ArrowRight' && currentImages.length) {
+        currentIndex = (currentIndex + 1) % currentImages.length;
+        updateSlide();
+        }
+    });
+    </script>
 </body>
 </html>
