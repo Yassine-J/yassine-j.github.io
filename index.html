@@ -646,6 +646,133 @@
         max-height: 280px;
     }
     }
+    .skills-section {
+    position: relative;
+    padding: 110px 24px 120px;
+  }
+
+  .skills-header {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 56px;
+  }
+
+  .skills-tag {
+    display: inline-block;
+    padding: 9px 16px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #8cc8ff;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    margin-bottom: 18px;
+  }
+
+  .skills-header h2 {
+    font-size: clamp(2.4rem, 5vw, 4.3rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+    margin-bottom: 14px;
+    color: #f7fbff;
+  }
+
+  .skills-header p {
+    color: #a9b9cf;
+    font-size: 1.08rem;
+    line-height: 1.8;
+  }
+
+  .premium-skills-grid {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .premium-skill-card {
+    position: relative;
+    overflow: hidden;
+    padding: 34px 30px 30px;
+    border-radius: 28px;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.28);
+    backdrop-filter: blur(16px);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .premium-skill-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at top right, rgba(115,199,255,0.18), transparent 30%);
+    pointer-events: none;
+  }
+
+  .premium-skill-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(115,199,255,0.38);
+    box-shadow: 0 30px 70px rgba(0,0,0,0.38);
+  }
+
+  .skill-icon {
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    border-radius: 20px;
+    font-size: 1.9rem;
+    margin-bottom: 22px;
+    background: linear-gradient(135deg, rgba(115,199,255,0.18), rgba(141,124,255,0.16));
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
+  }
+
+  .premium-skill-card h3 {
+    font-size: 1.75rem;
+    letter-spacing: -0.03em;
+    color: #f7fbff;
+    margin-bottom: 16px;
+  }
+
+  .skill-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .skill-chips span {
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.10);
+    color: #dbe9f8;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .premium-skill-card p {
+    color: #afbdd0;
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 95%;
+  }
+
+  @media (max-width: 900px) {
+    .premium-skills-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .premium-skill-card h3 {
+      font-size: 1.5rem;
+    }
+  }
   </style>
 </head>
 <body>
@@ -674,11 +801,15 @@
 
         </p>
         <p>
-          Étudiant orienté Data, Business Intelligence et pilotage, je construis des projets qui relient analyse, prise de décision et présentation claire des résultats. Ici, tu peux découvrir mon travail, mes expériences et mes réalisations.
+          Étudiant orienté Data, Business Intelligence et pilotage, je construis des projets qui relient 
+          analyse, prise de décision et présentation claire des résultats. Ici, vous pouvez découvrir mon 
+          travail, mes expériences et mes réalisations.
         </p>
 
         <p>
-            Actuellement à la recherche d'une alternance en Data Analysis ou Business Intelligence pour la rentrée 2027, je suis ouvert à toute opportunité qui me permettra de mettre en pratique mes compétences et de contribuer à des projets data concrets.
+            Actuellement à la recherche d'une alternance en Data Analysis ou Business Intelligence 
+            pour la rentrée 2027, je suis ouvert à toute opportunité qui me permettra de mettre en 
+            pratique mes compétences et de contribuer à des projets data concrets.
         </p>
 
         <div class="hero-actions">
@@ -700,6 +831,81 @@
             <span>Un portfolio qui évolue avec le temps et fréquemment mis à jour.</span>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="skills-section" id="skills">
+      <div class="skills-header">
+        <span class="skills-tag">EXPERTISE</span>
+        <h2>Compétences</h2>
+        <p>
+          Un profil hybride entre analyse de données, business intelligence
+          et aide à la décision.
+        </p>
+      </div>
+
+      <div class="skills-grid premium-skills-grid">
+
+        <article class="premium-skill-card">
+          <div class="skill-icon">📊</div>
+          <h3>Data Analysis</h3>
+          <div class="skill-chips">
+            <span>Python</span>
+            <span>pandas</span>
+            <span>SQL</span>
+            <span>EDA</span>
+          </div>
+          <p>
+            Analyse exploratoire, segmentation client, identification de patterns
+            et construction d’indicateurs utiles au pilotage.
+          </p>
+        </article>
+
+        <article class="premium-skill-card">
+          <div class="skill-icon">📈</div>
+          <h3>Business Intelligence</h3>
+          <div class="skill-chips">
+            <span>Power BI</span>
+            <span>Excel</span>
+            <span>Tableau</span>
+            <span>Reporting</span>
+          </div>
+          <p>
+            Création de dashboards interactifs, visualisation de KPI et
+            transformation des données en insights business exploitables.
+          </p>
+        </article>
+
+        <article class="premium-skill-card">
+          <div class="skill-icon">🧠</div>
+          <h3>Business & Decision</h3>
+          <div class="skill-chips">
+            <span>KPI</span>
+            <span>Pilotage</span>
+            <span>Synthèse</span>
+            <span>Décision</span>
+          </div>
+          <p>
+            Compréhension des enjeux métier, structuration des résultats et
+            communication claire pour accompagner la prise de décision.
+          </p>
+        </article>
+
+        <article class="premium-skill-card">
+          <div class="skill-icon">⚙️</div>
+          <h3>Tools & Workflow</h3>
+          <div class="skill-chips">
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>Rust</span>
+            <span>Java</span>
+          </div>
+          <p>
+            Travail en environnement collaboratif, versioning, projets techniques
+            et développement d’une rigueur utile dans les projets data.
+          </p>
+        </article>
+
       </div>
     </section>
 
