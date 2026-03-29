@@ -35,3 +35,13 @@ Créer une vitrine claire, moderne et professionnelle permettant de mettre en av
 ├── images/
 │   └── ...
 └── README.md
+
+```
+## Aperçu
+
+Le site a été pensé comme un support de présentation professionnel pour accompagner mes candidatures et centraliser mes projets sur une seule interface.
+
+## Auteur
+
+**Yassine Jouini**
+Étudiant en informatique orienté Data, Business Intelligence et pilotage
