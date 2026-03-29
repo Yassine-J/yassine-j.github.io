@@ -648,7 +648,7 @@
     }
     .skills-section {
     position: relative;
-    padding: 110px 24px 120px;
+    padding:50px 24px 30px;
   }
 
   .skills-header {
@@ -773,6 +773,99 @@
       font-size: 1.5rem;
     }
   }
+  .cert-section {
+    padding: 100px 20px;
+    text-align: center;
+  }
+
+  .cert-header {
+    margin-bottom: 50px;
+  }
+
+  .cert-tag {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: #8cc8ff;
+    margin-bottom: 15px;
+  }
+
+  .cert-header h2 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+  }
+
+  .cert-header p {
+    color: #aaa;
+  }
+
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .cert-card {
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    transition: 0.3s;
+  }
+
+  .cert-card:hover {
+    transform: translateY(-6px);
+    border-color: #6ec1ff;
+  }
+
+  .cert-card h3 {
+    margin-bottom: 8px;
+  }
+
+  .cert-org {
+    display: block;
+    font-size: 0.8rem;
+    color: #8cc8ff;
+    margin-bottom: 10px;
+  }
+
+  .cert-card p {
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  .cert-logo {
+    width: 45px;
+    margin-bottom: 15px;
+  }
+
+  .cert-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #fff;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .cert-btn:hover {
+    background: #6ec1ff;
+    color: #000;
+  }
+  .cert-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(110,193,255,0.3);
+  }
   </style>
 </head>
 <body>
@@ -831,81 +924,6 @@
             <span>Un portfolio qui évolue avec le temps et fréquemment mis à jour.</span>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="skills-section" id="skills">
-      <div class="skills-header">
-        <span class="skills-tag">EXPERTISE</span>
-        <h2>Compétences</h2>
-        <p>
-          Un profil hybride entre analyse de données, business intelligence
-          et aide à la décision.
-        </p>
-      </div>
-
-      <div class="skills-grid premium-skills-grid">
-
-        <article class="premium-skill-card">
-          <div class="skill-icon">📊</div>
-          <h3>Data Analysis</h3>
-          <div class="skill-chips">
-            <span>Python</span>
-            <span>pandas</span>
-            <span>SQL</span>
-            <span>EDA</span>
-          </div>
-          <p>
-            Analyse exploratoire, segmentation client, identification de patterns
-            et construction d’indicateurs utiles au pilotage.
-          </p>
-        </article>
-
-        <article class="premium-skill-card">
-          <div class="skill-icon">📈</div>
-          <h3>Business Intelligence</h3>
-          <div class="skill-chips">
-            <span>Power BI</span>
-            <span>Excel</span>
-            <span>Tableau</span>
-            <span>Reporting</span>
-          </div>
-          <p>
-            Création de dashboards interactifs, visualisation de KPI et
-            transformation des données en insights business exploitables.
-          </p>
-        </article>
-
-        <article class="premium-skill-card">
-          <div class="skill-icon">🧠</div>
-          <h3>Business & Decision</h3>
-          <div class="skill-chips">
-            <span>KPI</span>
-            <span>Pilotage</span>
-            <span>Synthèse</span>
-            <span>Décision</span>
-          </div>
-          <p>
-            Compréhension des enjeux métier, structuration des résultats et
-            communication claire pour accompagner la prise de décision.
-          </p>
-        </article>
-
-        <article class="premium-skill-card">
-          <div class="skill-icon">⚙️</div>
-          <h3>Tools & Workflow</h3>
-          <div class="skill-chips">
-            <span>Git</span>
-            <span>GitHub</span>
-            <span>Rust</span>
-            <span>Java</span>
-          </div>
-          <p>
-            Travail en environnement collaboratif, versioning, projets techniques
-            et développement d’une rigueur utile dans les projets data.
-          </p>
-        </article>
-
       </div>
     </section>
 
@@ -980,7 +998,7 @@
             <div>
             <div class="project-top">
                 <span class="project-badge">Projet 04</span>
-                <span class="project-index">04</span>
+                <span class="project-index"></span>
             </div>
             <h3>Nom de ton projet</h3>
             <p>Tu peux aussi y présenter un projet universitaire, une contribution technique ou une mission orientée décision.</p>
@@ -998,7 +1016,7 @@
             <div>
             <div class="project-top">
                 <span class="project-badge">Projet 05</span>
-                <span class="project-index">05</span>
+                <span class="project-index"></span>
             </div>
             <h3>Nom de ton projet</h3>
             <p>Mets ici un projet personnel fort, avec une phrase claire sur la valeur créée ou le problème résolu.</p>
@@ -1016,7 +1034,7 @@
             <div>
             <div class="project-top">
                 <span class="project-badge">Projet 06</span>
-                <span class="project-index">06</span>
+                <span class="project-index"></span>
             </div>
             <h3>Nom de ton projet</h3>
             <p>Dernier espace libre pour montrer un dashboard, une analyse de churn, une segmentation ou une autre réalisation.</p>
@@ -1045,6 +1063,123 @@
             <p id="modalDescription"></p>
         </div>
         </div>
+
+    <section class="skills-section" id="skills">
+      <div class="skills-header">
+        <h2>Compétences</h2>
+        <p>
+          Un profil hybride entre analyse de données, business intelligence
+          et aide à la décision.
+        </p>
+      </div>
+
+      <div class="skills-grid premium-skills-grid">
+
+        <article class="premium-skill-card">
+          <div class="skill-icon">📊</div>
+          <h3>Data Analysis</h3>
+          <div class="skill-chips">
+            <span>Python</span>
+            <span>pandas</span>
+            <span>SQL</span>
+            <span>EDA</span>
+          </div>
+          <p>
+            Analyse exploratoire, segmentation client, identification de patterns
+            et construction d’indicateurs utiles au pilotage.
+          </p>
+        </article>
+
+        <article class="premium-skill-card">
+          <div class="skill-icon">📈</div>
+          <h3>Business Intelligence</h3>
+          <div class="skill-chips">
+            <span>Power BI</span>
+            <span>Excel</span>
+            <span>Tableau</span>
+            <span>Reporting</span>
+          </div>
+          <p>
+            Création de dashboards interactifs, visualisation de KPI et
+            transformation des données en insights business exploitables.
+          </p>
+        </article>
+
+        <article class="premium-skill-card">
+          <div class="skill-icon">🧠</div>
+          <h3>Business & Decision</h3>
+          <div class="skill-chips">
+            <span>KPI</span>
+            <span>Pilotage</span>
+            <span>Synthèse</span>
+            <span>Décision</span>
+          </div>
+          <p>
+            Compréhension des enjeux métier, structuration des résultats et
+            communication claire pour accompagner la prise de décision.
+          </p>
+        </article>
+
+        <article class="premium-skill-card">
+          <div class="skill-icon">⚙️</div>
+          <h3>Tools & Workflow</h3>
+          <div class="skill-chips">
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>Rust</span>
+            <span>Java</span>
+          </div>
+          <p>
+            Travail en environnement collaboratif, versioning, projets techniques
+            et développement d’une rigueur utile dans les projets data.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="cert-section" id="certifications">
+      <div class="cert-header">
+        <h2>Certifications</h2>
+        <p>Certifications reconnues en data analysis, BI et marketing analytics</p>
+      </div>
+
+      <div class="cert-grid">
+
+        <!-- GOOGLE -->
+        <div class="cert-card">
+          <img src="images/google.png" class="cert-logo">
+          <h3>Google Data Analytics</h3>
+          <span class="cert-org">Google</span>
+          <a href="#" target="https://www.coursera.org/account/accomplishments/professional-cert/ZA3GG3E18GH3" class="cert-btn">Voir la certification</a>
+        </div>
+
+        <!-- MICROSOFT -->
+        <div class="cert-card">
+          <img src="images/microsoft.png" class="cert-logo">
+          <h3>Power BI Visualization</h3>
+          <span class="cert-org">Microsoft</span>
+          <a href="#" target="https://www.coursera.org/account/accomplishments/verify/C8XOOJT16PAI" class="cert-btn">Voir la certification</a>
+        </div>
+
+        <!-- ESSEC -->
+        <div class="cert-card">
+          <img src="images/essec.jpg" class="cert-logo">
+          <h3>Marketing Analytics</h3>
+          <span class="cert-org">ESSEC</span>
+          <a href="#" target="https://www.coursera.org/account/accomplishments/verify/RS2W57YVAHVG" class="cert-btn">Voir la certification</a>
+        </div>
+
+        <!-- KAGGLE -->
+        <div class="cert-card">
+          <img src="images/kaggle.png" class="cert-logo">
+          <h3>Machine Learning</h3>
+          <span class="cert-org">Kaggle</span>
+          <a href="#" target="https://www.kaggle.com/learn/certification/yassinejouinii/intro-to-machine-learning" class="cert-btn">Voir la certification</a>
+        </div>
+
+      </div>
+    </section>
 
     <section class="container" id="contact">
       <div class="contact-wrap fade-up">
