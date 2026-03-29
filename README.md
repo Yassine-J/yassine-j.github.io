@@ -43,5 +43,4 @@ Le site a été pensé comme un support de présentation professionnel pour acco
 
 ## Auteur
 
-**Yassine Jouini**
-Étudiant en informatique orienté Data, Business Intelligence et pilotage
+**Yassine Jouini** - Étudiant en informatique orienté Data, Business Intelligence et pilotage
