@@ -83,23 +83,6 @@
       color: transparent;
     }
 
-    .nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .nav a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.25s ease;
-    }
-
-    .nav a:hover {
-      color: var(--text);
-    }
-
     main {
       position: relative;
       z-index: 1;
@@ -112,10 +95,10 @@
     }
 
     .hero {
-      min-height: 90vh;
+      min-height: 68vh;
       display: grid;
       place-items: center;
-      padding: 80px 0 50px;
+      padding: 40px 0 20px;
     }
 
     .hero-card {
@@ -126,7 +109,8 @@
       box-shadow: var(--shadow);
       border-radius: 36px;
       overflow: hidden;
-      padding: 56px 42px;
+      padding: 34px 30px;
+      border-radius: 28px;
       isolation: isolate;
     }
 
@@ -178,7 +162,7 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.6rem, 6vw, 5.7rem);
+      font-size: clamp(2rem, 4vw, 3.8rem);
       line-height: 0.95;
       letter-spacing: -0.05em;
       max-width: 950px;
@@ -262,7 +246,7 @@
     }
 
     section {
-      padding: 48px 0 92px;
+      padding: 30px 0 60px;
     }
 
     .section-heading {
@@ -281,7 +265,7 @@
     }
 
     .section-heading h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
       letter-spacing: -0.04em;
       margin-bottom: 10px;
     }
@@ -695,7 +679,7 @@
   .premium-skill-card {
     position: relative;
     overflow: hidden;
-    padding: 34px 30px 30px;
+    padding: 22px 20px;
     border-radius: 28px;
     background:
       linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
@@ -721,12 +705,12 @@
   }
 
   .skill-icon {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
+    font-size: 1.4rem;
     display: grid;
     place-items: center;
     border-radius: 20px;
-    font-size: 1.9rem;
     margin-bottom: 22px;
     background: linear-gradient(135deg, rgba(115,199,255,0.18), rgba(141,124,255,0.16));
     border: 1px solid rgba(255,255,255,0.14);
@@ -734,7 +718,7 @@
   }
 
   .premium-skill-card h3 {
-    font-size: 1.75rem;
+    font-size: 1.3rem;
     letter-spacing: -0.03em;
     color: #f7fbff;
     margin-bottom: 16px;
@@ -795,7 +779,7 @@
   }
 
   .cert-header h2 {
-    font-size: 2.8rem;
+    font-size: 2rem;
     margin-bottom: 10px;
   }
 
@@ -812,7 +796,7 @@
   }
 
   .cert-card {
-    padding: 25px;
+    padding: 16px;
     border-radius: 20px;
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
@@ -841,7 +825,7 @@
     color: #ccc;
   }
   .cert-logo {
-    width: 45px;
+    width: 32px;
     margin-bottom: 15px;
   }
 
@@ -862,9 +846,45 @@
     background: #6ec1ff;
     color: #000;
   }
+  
   .cert-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 0 20px rgba(110,193,255,0.3);
+  }
+
+  .skills-section {
+  padding: 30px 24px 10px;
+  }
+
+  .cert-section {
+    padding: 10px 24px 40px;
+  }
+  .nav {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    position: relative;
+    padding-bottom: 4px;
+  }
+  .nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.25s ease;
+  }
+
+  .nav a:hover::after {
+    width: 100%;
   }
   </style>
 </head>
@@ -877,6 +897,8 @@
       <nav class="nav">
         <a href="#home">Accueil</a>
         <a href="#projects">Projets</a>
+        <a href="#skills">Compétences</a>
+        <a href="#certifications">Certifications</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
