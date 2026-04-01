@@ -919,7 +919,130 @@
       line-height: 1.55;
     }
   }
-</style>
+ .hero-card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .hero-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+    gap: 32px;
+    align-items: center;
+  }
+
+  .hero-left {
+    min-width: 0;
+  }
+
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-cv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cv-card {
+    width: min(100%, 260px);
+    min-height: 280px;
+    border-radius: 22px;
+    padding: 22px 20px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .cv-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .cv-sub {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--muted);
+    margin-bottom: 18px;
+  }
+
+  .cv-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    color: #07111f;
+    background: linear-gradient(90deg, var(--accent), #bce6ff);
+    box-shadow: 0 10px 30px rgba(115,199,255,0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .cv-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px rgba(115,199,255,0.32);
+  }
+
+  @media (max-width: 980px) {
+    .hero-main {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .hero-right {
+      justify-content: flex-start;
+    }
+
+    .hero-cv {
+      justify-content: flex-start;
+    }
+
+    .cv-card {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .hero-card {
+      gap: 18px;
+    }
+
+    .hero-main {
+      gap: 20px;
+    }
+
+    .hero-right,
+    .hero-cv {
+      justify-content: flex-start;
+    }
+
+    .cv-card {
+      max-width: 100%;
+      min-height: auto;
+    }
+  }
+  .cv-preview-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 16px 32px rgba(0,0,0,0.28);
+  }
+  </style>
 </head>
 <body>
   <div class="noise"></div>
@@ -940,21 +1063,42 @@
   <main>
     <section class="hero container" id="home">
       <div class="hero-card fade-up">
-        <div class="eyebrow">Bienvenue sur mon univers data & business</div>
-        <h1>
-          Je transforme des <span class="gradient">données</span><br>
-          en projets clairs, visuels et utiles.
-        </h1>
-        <p>
+        <div class="hero-main">
+          <div class="hero-left">
+            <div class="eyebrow">Bienvenue sur mon univers data & business</div>
 
-        </p>
-        <p>
-          Étudiant en informatique orienté Data Analysis et Business Intelligence, je conçois des projets mêlant analyse, visualisation et aide à la décision. Je recherche une alternance pour la rentrée 2027 afin de contribuer à des projets data concrets.
-        </p>
+            <h1>
+              Je transforme des <span class="gradient">données</span><br>
+              en projets clairs, visuels et utiles.
+            </h1>
+            &nbsp;
+            <p>
+              Étudiant en informatique orienté Data Analysis et Business Intelligence, je conçois des projets mêlant analyse, visualisation et aide à la décision. Je recherche une alternance pour la rentrée 2027 afin de contribuer à des projets data concrets.
+            </p>
+            <p>
+              Vous y trouverez les éléments clés de mon profil pour évaluer rapidement mon adéquation avec un poste en data.
+            </p>
+            &nbsp;
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#projects">Voir mes projets</a>
+              <a class="btn btn-secondary" href="#contact">Me contacter</a>
+            </div>
+          </div>
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">Voir mes projets</a>
-          <a class="btn btn-secondary" href="#contact">Me contacter</a>
+          <div class="hero-right">
+            <div class="hero-cv">
+              <div class="cv-card">
+                <div class="cv-preview-wrap">
+                  <img src="images/cv-preview.jpg" alt="Aperçu du CV de Yassine Jouini" class="cv-preview-img">
+                </div>
+                
+                <p></p>
+                <a href="CV_Yassine_Jouini (19).pdf" download class="cv-download">
+                  Télécharger
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="hero-stats">
@@ -971,6 +1115,7 @@
             <span>Data Analyst / Business Intelligence</span>
           </div>
         </div>
+
       </div>
     </section>
 
